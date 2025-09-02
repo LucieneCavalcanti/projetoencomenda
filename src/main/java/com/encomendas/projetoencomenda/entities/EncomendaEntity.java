@@ -6,6 +6,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,8 +31,12 @@ public class EncomendaEntity {
     private int id;
     private Timestamp datahora;
     // 1 encomenda possui 1 cliente
+    @OneToOne
+    @JoinColumn(name="idcliente", nullable=false)
     private PessoaEntity cliente;
     // 1 encomenda é cadastrada por 1 funcionário
+    @OneToOne
+    @JoinColumn(name="idfuncionario", nullable = false)
     private FuncionarioEntity funcionario;
     @NonNull
     private float total;
@@ -42,5 +49,6 @@ public class EncomendaEntity {
     @NonNull
     private String entrega;
     // 1 - N com produtos -> DER
+    @OneToMany
     private ArrayList<ItemEncomendaEntity> itens;
 }

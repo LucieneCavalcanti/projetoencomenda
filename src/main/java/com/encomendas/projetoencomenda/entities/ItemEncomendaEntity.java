@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,6 +26,8 @@ public class ItemEncomendaEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NonNull
     private int id;
+    @OneToOne
+    @JoinColumn(name="idproduto", nullable=false)
     private ProdutoEntity produto; // 1 - 1
     private float quantidade;
     private float preco;

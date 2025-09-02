@@ -6,17 +6,23 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
-
-// @Getter
-// @Setter
-@Data
-// @AllArgsConstructor
-// @NoArgsConstructor
+import lombok.Setter;
+@Getter
+@Setter
+// @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name="pessoas")
+@Inheritance(strategy = InheritanceType.JOINED) 
+// Estratégia de herança com tabelas separadas 
 public class PessoaEntity {
     @Id //chave primária
     @GeneratedValue(strategy = GenerationType.IDENTITY)
