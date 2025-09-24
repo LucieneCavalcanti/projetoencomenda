@@ -8,12 +8,12 @@
 		<version>3.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>encomendas</artifactId>
+	<groupId>com.encomendas</groupId>
+	<artifactId>projetoencomenda</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>encomendas</name>
-	<description>Demo project for Spring Boot</description>
+	<name>projetoencomenda</name>
+	<description>Projeto para vendas por encomenda</description>
 	<url/>
 	<licenses>
 		<license/>
